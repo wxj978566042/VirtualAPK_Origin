@@ -57,9 +57,8 @@ dependencies {
     compile ('com.github.bumptech.glide:glide:4.8.0'){
         exclude group:'com.android.support',module: '*'
     }
-    compile 'com.uniview.osd:osd:0.0.4'
     compile 'com.uniview.support:appcompat:1.8.8.5'
-//    implementation 'com.didi.virtualapk:core:0.9.8'
+    compile 'com.didi.virtualapk:core:0.9.8'
 }
 
 apply plugin: 'com.didi.virtualapk.plugin'

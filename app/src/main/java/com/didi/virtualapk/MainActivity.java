@@ -23,8 +23,10 @@ import android.widget.Toast;
 
 import com.didi.virtualapk.internal.LoadedPlugin;
 import com.didi.virtualapk.internal.PluginContentResolver;
+import com.uniview.support.utils.LogUtil;
 
 import java.io.File;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,6 +56,18 @@ public class MainActivity extends AppCompatActivity {
         } else {
             requestPermission();
         }
+
+        isPlugin();
+    }
+
+    private boolean isPlugin() {
+        List<LoadedPlugin> pluginList = PluginManager.getInstance(this).getAllLoadedPlugins();
+        LogUtil.d("===================printLoadedPluginsBegin:pluginManager:" + PluginManager.getInstance(this).toString());
+        for (LoadedPlugin plugin: pluginList){
+            LogUtil.d("===========pluginInfo:" + plugin.getPackageName());
+        }
+        LogUtil.d("===================printLoadedPluginsEnd:");
+        return null != PluginManager.getInstance(this).getLoadedPlugin("com.didi.virtualapk.demo");
     }
 
     @Override

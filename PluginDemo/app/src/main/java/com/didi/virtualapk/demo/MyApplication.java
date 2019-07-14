@@ -5,6 +5,9 @@ import com.didi.virtualapk.demo.utils.MyUtils;
 import android.app.Application;
 import android.os.Process;
 import android.util.Log;
+import com.didi.virtualapk.PluginManager;
+import com.didi.virtualapk.internal.*;
+import java.util.List;
 
 public class MyApplication extends Application {
 
@@ -28,5 +31,16 @@ public class MyApplication extends Application {
     private void doWorkInBackground() {
         // init binder pool
         //BinderPool.getInsance(getApplicationContext());
+        isPlugin();
+    }
+
+    private boolean isPlugin() {
+        List<LoadedPlugin> pluginList = PluginManager.getInstance(this).getAllLoadedPlugins();
+        Log.d(TAG, "===================printLoadedPluginsBegin:pluginManager:" + PluginManager.getInstance(this).toString());
+        for (LoadedPlugin plugin: pluginList){
+            Log.d(TAG, "===========pluginInfo:" + plugin.getPackageName());
+        }
+        Log.d(TAG, "===================printLoadedPluginsEnd:");
+        return null != PluginManager.getInstance(this).getLoadedPlugin("com.didi.virtualapk.demo");
     }
 }
