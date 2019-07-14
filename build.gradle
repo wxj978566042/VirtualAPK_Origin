@@ -3,12 +3,13 @@ buildscript {
 
     repositories {
         jcenter()
-        google()
+//        google()
+        maven { url 'https://maven.google.com' }
         maven { url 'http://61.164.52.190/nexus/content/repositories/airimos/' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
-        classpath 'com.didi.virtualapk:gradle:0.9.8.6'
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.didi.virtualapk:gradle:0.9.4'
 
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
@@ -19,7 +20,7 @@ ext {
     VERSION_COMPILE_SDK = 27
     VERSION_BUILD_TOOLS = '26.0.2'
 
-    VERSION_MIN_SDK = 15
+    VERSION_MIN_SDK = 16
     VERSION_TARGET_SDK = 25
 
     SOURCE_COMPATIBILITY = JavaVersion.VERSION_1_7
@@ -29,7 +30,8 @@ allprojects {
     repositories {
         mavenCentral()
         jcenter()
-        google()
+//        google()
+        maven { url 'https://maven.google.com' }
         maven { url 'http://61.164.52.190/nexus/content/repositories/airimos/' }
     }
 }

@@ -1,13 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-        google()
+//        google()
         jcenter()
+        maven { url 'https://maven.google.com' }
         maven { url 'http://61.164.52.190/nexus/content/repositories/airimos/' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
-        classpath 'com.didi.virtualapk:gradle:0.9.8.6'
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.didi.virtualapk:gradle:0.9.4'
     }
 }
 
@@ -23,8 +24,9 @@ ext {
 
 allprojects {
     repositories {
-        google()
+//        google()
         jcenter()
+        maven { url 'https://maven.google.com' }
         maven { url 'http://61.164.52.190/nexus/content/repositories/airimos/' }
     }
 }
