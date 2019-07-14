@@ -4,6 +4,7 @@ buildscript {
     repositories {
         jcenter()
         google()
+        maven { url 'http://61.164.52.190/nexus/content/repositories/airimos/' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
@@ -29,6 +30,7 @@ allprojects {
         mavenCentral()
         jcenter()
         google()
+        maven { url 'http://61.164.52.190/nexus/content/repositories/airimos/' }
     }
 }
 

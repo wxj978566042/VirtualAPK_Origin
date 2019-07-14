@@ -54,6 +54,11 @@ dependencies {
     // the following aars are also compiled in host project, so they will be filterd when build plugin apk.
     // but, wo can still visit their Class and Resources.
     implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation ('com.github.bumptech.glide:glide:4.8.0'){
+        exclude group:'com.android.support',module: '*'
+    }
+    implementation 'com.uniview.osd:osd:0.0.4'
+    implementation 'com.uniview.support:appcompat:1.8.8.5'
 //    implementation 'com.didi.virtualapk:core:0.9.8'
 }
 
